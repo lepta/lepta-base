@@ -8,7 +8,7 @@ $dbCfg = array(
         'database' => 'leptaden'
     ),
     'test' => array(
-        'host' => '',
+        'host' => 'localhost',
         'login' => '',
         'password' => '',
         'database' => ''
