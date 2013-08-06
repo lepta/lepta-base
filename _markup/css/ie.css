@@ -1,0 +1,7 @@
+
+.ui-accordion-header-active .collapse-icon{
+    background: url("../images/collapse-icon-open.png") no-repeat;
+}
+.ui-accordion-header-active  .collapse-icon.white{
+    background: url("../images/collapse-icon-open-white.png") no-repeat;
+}

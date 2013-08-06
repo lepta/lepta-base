@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Заказ {$order.id}</title>
+<style type="text/css">
+body,td,th {
+	padding:20px;
+	width:640px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	text-align:left;
+}
+hr{
+	size:1;
+	width:640px;
+	color:#333;
+	float:left;
+}
+strong{
+	color:#06F;
+}
+</style>
+</head>
+
+<body>
+<h2>Здравствуйте!</h2>
+<h3 style="color:#555">Спасибо за выбор оригинальных препаратов ALARSIN -<br />
+эффективных, натуральных, безопасных и проверенных временем.</h3>
+<p style="">Ваш заказ: <strong> #{$order.id}</strong>;<br />
+<small>Дата: {$order.date};</small></p>
+
+<p style="background-color:#06F; border:dashed 0px #06F; padding:20px; color:#fff"><u>{$productName}</u> - {$order.items_amount}.шт - {$order.items_price} грн. - {$order.items_amount * $order.items_price} грн. </p>
+<p>Общая сумма:<strong> {$order.totalWithoutDiscount}</strong> грн. ;</p><hr style="size:1" />
+<p>Скидка: <strong>{$order.discount}</strong> %;<br />
+Cумма скидки: <strong>{$order.discountSum}</strong> грн. ;</p>
+<hr style="size:1" />
+
+<p>Итого к оплате: <strong>{$order.items_total}</strong> грн. ;</p>
+<p><br />
+  <em>Условия доставки: {$order.shipment_method}</em><br />
+	<!--Стоимость доставки: 20 грн</em><br />-->
+<br />
+</p>
+<h3>В течение 2-х часов  с Вами свяжется менеджер для подтверждения заказа и уточнения условий доставки.</h3>
+<p><em>С уважением,<br />
+  Команда обслуживания клиентов ОРГАНИК ПРОДАКТС УКРАИНА</em><br /><br />
+
+  <a href="http://www.leptaden.com.ua">http://www.leptaden.com.ua</a><br />
+  
+  <a href="http://www.alarsin.com.ua">http://www.alarsin.com.ua</a><br />
+</p>
+</body>
+</html>
