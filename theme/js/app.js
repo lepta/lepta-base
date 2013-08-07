@@ -84,6 +84,9 @@ $(function(){
     $(".modal .close").on("click", function(){
         hide($(".modal"));
     })
+    $(".pharmacy_header_left_select select").on("change", function(){
+        getCityList($(this).val());
+    })
     $(".section-header").on("click", function(){
         var hash = $(this).attr("data-hash");
         setActiveMenu($("[href='#" + hash + "']"));
@@ -110,7 +113,31 @@ $(function(){
         var target = $(event.target).attr("href");
         $( "#accordion" ).accordion( "option", "active", $('.section-header').index($(".section-header[data-hash='" + target.slice(1) + "']")));
         window.location.hash = target;
+    };
+    function getCityList(region){
+        if(!region) return
 
+        function onGetCityListSuccess(result){
+            if(!result) return
+            var cityList = $.parseJSON(result.data),
+                options = "";
 
+            $.each(cityList, function(key, value) {
+                options += '<option value="' + key + '">' + value + '</option>';
+            });
+
+            $(".pharmacy_header_left_select select#city").html(options);
+        };
+
+        function onGetCityListError(error){
+            console && console.log("Empty data or error occurred on getCityList request")
+        };
+        $.ajax({
+            type: "POST",
+            url: "/drugstores/getCities/",
+            data: region,
+            success: onGetCityListSuccess,
+            error: onGetCityListError
+        });
     };
 })
