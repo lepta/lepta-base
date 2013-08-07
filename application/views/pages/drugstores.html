@@ -1,4 +1,44 @@
 {extends file="layouts/base.html"}
 {block name="content"}
-        <h1>Контент для страницы аптек</h1>
+<section class="pharmacy">
+    <div class="pharmacy_header">
+        <div class="pharmacy_header_left">
+            <h3 class="white">Аптечные сети-партнеры</h3>
+            <p>
+                Здесь представлен список аптек, в которых Вы можете купить эффективные аюрведические препараты Алоез
+                Компаунд (Aloes Compound), Бангшил (Bangshil), Лептаден (Leptaden), Мирон (Myron), Фортеж (Fortege)
+                компании ALARSIN
+            </p>
+            <div class="pharmacy_header_left_select">
+                <select id="region" name="region">
+                    <option value="0" selected>Киевская область</option>
+                </select>
+            </div>
+            <div class="pharmacy_header_left_select">
+                <select id="city" name="city">
+                    <option value="0">Выбрать город</option>
+                    <option value="1" selected>Киев</option>
+                    <option value="2">Борисполь</option>
+                </select>
+            </div>
+        </div>
+        <div class="pharmacy_header_right">
+            <img src="../../../theme/images/pharmacy_logo.png">
+        </div>
+    </div>
+    <div class="pharmacy_content">
+        <div class="pharmacy_content_region">
+            <div class="pharmacy_content_region_header">
+                Дарницкий р-н
+            </div>
+            <div class="pharmacy_content_region_list">
+                <div class="pharmacy_content_region_list_item">
+                    <img src="../../../theme/images/good_day_icon.png" alt=""/>
+                    <h5> Аптека доброго дня</h5>
+                    <span>адрес здесь адрес здесь адрес здесь</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {/block}

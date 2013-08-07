@@ -30,6 +30,9 @@ h2{
     color: #000;
     margin: 0;
 }
+h2.white, h3.white{
+    color: #fff;
+}
 h3{
     font-size: 24px;
     font-family: Century Gothic;
@@ -640,7 +643,6 @@ select, input{
 /* -- select  --*/
 span.customSelect {
     background: url(../images/select_bg.png) no-repeat right #ffffff;
-    border: 1px solid #cccccc;
     color:#000;
     padding:0px 8px;
     width: 165px;
@@ -676,4 +678,74 @@ input[type="text"].medium{
     -ms-animation: changed 0.5s;
     animation: changed 0.5s;
 }
+/*  ----  pharmacy  ----  */
+.pharmacy{
+     margin-top: -5px;
+ }
+.pharmacy_header{
+    background: #0189ca;
+    color: #fff;
+    margin-top: -5px;
+    padding: 20px 40px;
+}
+.pharmacy_header h3{
+    font-size: 26px;
+    margin: 0;
+}
+.pharmacy_header_left, .pharmacy_header_right{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+.pharmacy_header_left{
+    width: 58%;
+    margin-right: 22%;
+}
+.pharmacy_header_right img{
+    position: absolute;
+    top: -15px;
+}
+.pharmacy_header_left p{
+    font-size: 14px;
+    line-height: 18px;
+}
+.pharmacy_header_left_select{
+    display: inline-block;
+    margin: 10px 20px 10px 0;
+    position: relative;
+}
+.pharmacy_content{
+    padding: 20px 40px;
+}
+.pharmacy_content_region_header{
+    color: #1492ce;
+    font-size: 19px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dedede;
+}
+.pharmacy_content_region_list{
+    margin-bottom: 25px;
+}
+.pharmacy_content_region_list_item{
+    width: 24.6%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 15px 0;
+    line-height: 14px;
+}
+.pharmacy_content_region_list_item img,
+.pharmacy_content_region_list_item h5,
+.pharmacy_content_region_list_item span{
+    vertical-align: top;
+    display: inline-block;
+}
+.pharmacy_content_region_list_item h5{
+    width: 80%;
+    margin: 0 0 0 15px;
 
+}
+.pharmacy_content_region_list_item span{
+    margin-left: 35px;
+    line-height: 1;
+    line-height: 14px;
+}
