@@ -17,6 +17,6 @@ class IndexController extends BaseController {
 		$this->view->assignValue('meta', $seo->getMetaData() );
 		$this->view->assignValue('content', $content);
 		$this->view->assignValue('reviews', $reviewsManager->getList());
-        $this->view->render('layouts/index.html');
+        $this->view->render('pages/index.html');
     }
 }

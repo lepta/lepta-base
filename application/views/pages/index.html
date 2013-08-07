@@ -1,0 +1,312 @@
+{extends file="layouts/base.html"}
+{block name="content"}
+<section class="first" itemscope itemtype="http://schema.org/Drug">
+    <div class="section-background"></div>
+    <div class="question-area">
+        <h3 itemprop="indication" itemscope itemtype="http://schema.org/TreatmentIndication"><span itemprop="name">Опасаетесь отсутствия молока или малого его количества?</span></h3>
+        <h3 itemprop="indication" itemscope itemtype="http://schema.org/TreatmentIndication" class="marginRight"><span itemprop="name">У вас наступил лактационный криз?</span></h3>
+        <h3 itemprop="indication" itemscope itemtype="http://schema.org/TreatmentIndication" class="marginRight"><span itemprop="name">Ваш малыш медленно прибавляет в весе?</span></h3>
+    </div>
+    <div class="text">
+        <p>Восстанавливает нарушенную лактацию</p>
+        <p>Увеличивает количество и улучшает качество грудного молока в более, чем 90% случаев*</p>
+        <p>Стимулирует лактацию уже через 8 часов после приема препарата</p>
+        <p>На 68% малыш быстрее прибавляет в весе*</p>
+        <p>Натуральный ФИТО препарат</p>
+        <p>Не содержит  аллергенов и не имеет побочных действий</p>
+        <p>Рекомендовано применять с 1 дня родов</p>
+        <cite>*согласно данным клинических испытаний </cite>
+    </div>
+    <img src="/theme/images/section_first.png" alt="ЛЕПТАДЕН"/>
+</section>
+<div id="accordion">
+    <div class="section-header" data-hash="{$content.breast_milk.alias}">
+        <h2>{$content.breast_milk.title}</h2>
+        <div class="collapse-icon"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body breast_milk">
+        <img class="left" src="/theme/images/breast_milk.png" alt="{$content.breast_milk.title}"/>
+        <div class="text-section right" >
+            {$content.breast_milk.text}
+        </div>
+    </div>
+
+    <div class="section-header blue" data-hash="{$content.food.alias}">
+        <div class="section-background"></div>
+        <h2>{$content.food.title}</h2>
+        <div class="collapse-icon white"></div>
+        <div class="section-header-background"></div>
+
+    </div>
+    <div class="section-body food blue">
+        <div class="text-section">
+            {$content.food.text}
+        </div>
+        <img class="right" src="/theme/images/food.png" alt="Питание при кормлении грудью"/>
+        <!--<div class="section-background bottom"></div>-->
+    </div>
+
+    <div class="section-header" data-hash="{$content.reduced_lactation.alias}">
+        <div class="section-background header bottom"></div>
+        <h2>{$content.reduced_lactation.title}</h2>
+        <div class="collapse-icon"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body reduced_lactation">
+        <img class="left" src="/theme/images/reduced_lactation.png" alt="{$content.reduced_lactation.title}"/>
+        <div class="text-section right">
+            {$content.reduced_lactation.text}
+        </div>
+    </div>
+
+    <div class="section-header pink" data-hash="{$content.improve_lactation.alias}">
+        <div class="section-background pink" ></div>
+        <h2>{$content.improve_lactation.title}</h2>
+        <div class="collapse-icon white"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body improve_lactation pink">
+        <div class="text-section">
+            {$content.improve_lactation.text}
+        </div>
+        <img class="right" src="/theme/images/improve_lactation.png" alt="Как улучшить лактацию?"/>
+        <div class="section-background bottom"></div>
+    </div>
+
+    <div class="section-header leptaden-header" data-hash="{$content.leptaden.alias}" itemscope itemtype="http://schema.org/Product">
+        <div class="section-background"></div>
+        <h2 itemprop="name">Лептаден®</h2><strong>{$content.leptaden.title}</strong>
+        <div class="collapse-icon"></div>
+        <div class="section-header-background"></div>
+        <div class="section-background header bottom"></div>
+    </div>
+    <div class="section-body leptaden">
+        <img class="left" src="/theme/images/leptaden.png" alt="{$content.leptaden.title}"/>
+        <div class="text-section">
+            {$content.leptaden.text}
+            <button class="order-button"><h3>ОФОРМИТЬ ЗАКАЗ</h3></button>
+            <button class="delivery-button"><h3>Заказ и доставка</h3></button>
+        </div>
+        <img src="/theme/images/landing-leptaden.png" alt="{$content.leptaden.title}"/>
+    </div>
+
+    <div class="section-header reviews-header blue" data-hash="reviews">
+        <div class="section-background" ></div>
+        <img src="/theme/images/review-icon.png" alt="Отзывы"/><h2>Отзывы</h2>
+        <div class="collapse-icon white"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body reviews blue">
+        <div class="review-section-wrapper">
+            <div class="review-section">
+                {foreach $reviews as $review}
+                <div class="review" itemscope itemtype="http://schema.org/Review">
+                    <img src="{$review.image}" alt="Отзыв"/>
+                    <div  class="review-text" itemprop="description">
+                        {$review.text}
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+        <div class="review-more">
+            <span>еще</span>
+            <img src="/theme/images/review-more.png" alt="еще"/>
+        </div>
+    </div>
+</div>
+<section id="all">
+    <div class="section-body">
+        <div class="section-background header bottom"></div>
+        <h2>Здоровая мама, здоровый ребенок!</h2>
+        <div class="brands">
+            <img class="brand" src="/theme/images/brands.png" alt="Здоровая мама, здоровый ребенок!"/>
+        </div>
+        <div class="alarsin">
+            <img src="/theme/images/all_alarsin.png" alt="Alarsin"/>
+            <span>Лидер юрведичечских исследований</span>
+        </div>
+        <div class="contacts" itemprop="address" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">Эксклюзивный импортер продукции АЛАРСИН в Украине - ООО «Органик Продактс Украина»</span>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span itemprop="streetAddress">Адрес: Украина, 03186, г. Киев, ул. Авиаконструктора Антонова, д. 15-А</span>
+                <span itemprop="telephone">Телефон: +38 (044) 587 95 77</span>
+                <span itemprop="logo">www.alarsin.com.ua</span>
+            </div>
+        </div>
+        <img class="right" src="/theme/images/all.png" alt="Здоровая мама, здоровый ребенок!"/>
+    </div>
+</section>
+<div id="orderModal" class="modal hide" style="opacity: 0;">
+    <div class="modal-bg-right"></div>
+    <div class="modal-inner">
+        <span class="close"></span>
+        <div class="form-left">
+            <span>Оформление заказа</span>
+            <img src="/theme/images/moda-alarsin.png" alt=""/>
+        </div>
+        <div class="form-right">
+            <form name="orderForm" action="/order/store/" method="post">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="quantity">Количество упаковок:</label>
+                        <div class="controls">
+                            <select id="quantity" class="small" name="items_amount">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="name">Имя и фамилия получателя*:</label>
+                        <div class="controls">
+                            <input type="text" id="name" name="customer_name" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="phone">Номер телефона*:</label>
+                        <div class="controls">
+                            <input type="text" id="phone" name="customer_phone" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="customer_email">Email*:</label>
+                        <div class="controls">
+                            <input type="text" id="email" name="customer_email" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="delivery">Способ доставки*:</label>
+                        <div class="controls">
+                            <select id="delivery" name="shipment_method" class="medium" required>
+                                <option value="Курьер" selected>Курьером по Киеву</option>
+                                <option value="Новая почта">Новая почта</option>
+                                <option value="Укрпочта">Укрпочта</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <span class="legend">Адрес доставки: </span>
+                    <div class="control-group">
+                        <label class="control-label" for="city">Город*:</label>
+                        <div class="controls">
+                            <input type="text" id="city" name="shipment_city" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="street">Улица*:</label>
+                        <div class="controls">
+                            <input type="text" id="street" name="shipment_street" required>
+                        </div>
+                    </div>
+                    <div class="control-group float-left-group" >
+                        <label class="control-label" for="house">Дом №*:</label>
+                        <div class="controls">
+                            <input type="text" id="house" class="small" name="shipment_building" required>
+                        </div>
+                        <label class="control-label float-left" for="apartment">Квартира/офис №*:	</label>
+                        <div class="controls float-left">
+                            <input type="text" id="apartment" class="small" name="shipment_apartment" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="pay">Способ оплаты*:</label>
+                        <div class="controls">
+                            <select id="pay" name="payment_method" class="medium" required>
+                                <option value="Наличными" selected>Наличные</option>
+                                <option value="Безналичный расчет">Безналичный расчет</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="order-button">Оформить заказ</button>
+                    <div class="control-group float-right-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" required> Я согласен получать рассылку новостей Органик Продактс Украина
+                            </label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="items_price" value="168" />
+                    <input type="hidden" name="discount" value="0" />
+                    <input type="hidden" name="site" value="leptaden.com.ua" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="deliveryModal" class="modal hide" >
+    <div class="modal-bg-right"></div>
+    <div class="modal-inner">
+        <span class="close"></span>
+        <div class="form-left">
+            <span>ЗАКАЗ И ДОСТАВКА</span>
+            <img src="/theme/images/alarsin.png" alt=""/>
+        </div>
+        <div class="form-right">
+            <h2>Как получить скидку:</h2>
+            <p>При оформлении заказа на сайте  в поле Код скидки введите Код, указанный на обороте  листа назначений (бланка рецепта),
+                выданного Вашим лечащим доктором,  и получите скидку 10 % вне зависимости от выбранного количества упаковок препарата АЛАРСИН. Данный код действует постоянно.
+            </p>
+            <p>
+                При оформлении заказа без Кода скидки при покупке от 2 до 5 упаковок Вы получаете скидку 5 %.  При покупке более 5-ти единиц товара – 10 %, больше 20-ти единиц товара – 15 %.
+            </p>
+            <p>
+                Купить препараты ALARSIN
+            </p>
+            <img src="/theme/images/delivery.png" alt=""/>
+            <h2>Как доставляется Ваш заказ:</h2>
+            <p>
+                Доставка по Киеву осуществляется курьером на следующий день в случае оформления заказа до 18.00. Если заказ оформлен после 18.00, то Ваш заказ будет доставлен через день.
+            </p>
+            <p>
+                Время доставки с 10:00 до 18:00 в будние дни.
+            </p>
+            <p>
+                Доставка бесплатна при заказе 2 (двух) и более упаковок.
+            </p>
+            <p>
+                Стоимость доставки - 20 грн. при заказе 1 (одной) упаковки
+            </p>
+            <p>
+                Доставка по Киевской области и в другие регионы Украины осуществляется  службой экспресс доставки «Нова Пошта» по действующим тарифам с предоплатой заказа (безналичный расчет),
+                или службой доставки «Укрпошта» по действующим тарифам с оплатой заказа при получении наложенным платежом.
+            </p>
+            <p>
+                Отправка заказа осуществляется  на следующий день в случае оформления заказа до 18.00. Если заказ оформлен после 18.00, то Ваш заказ будет отправлен через день.
+            </p>
+            <p>
+                Сроки доставки Вы можете проверить на сайтах служб доставки «Нова Пошта» и «Укрпошта».
+            </p>
+            <button type="submit" class="order-button">Оформить заказ</button>
+        </div>
+    </div>
+</div>
+<div id="successModal" class="modal hide" >
+    <div class="modal-bg-right"></div>
+    <div class="modal-inner">
+        <span class="close"></span>
+        <div class="form-left">
+            <img src="/theme/images/alarsin.png" alt="alarsin"/>
+        </div>
+        <div class="form-right">
+            <h2>Ваш заказ принят</h2>
+            <p>
+                С Вами оперативно свяжется менеджер для<br />
+                подтверждения заказа и уточнения условий доставки
+            </p>
+            <strong>Время работы в будние дни с 9:30 до 18:00</strong>
+            <p class="faded">
+                С уважением, команда обслуживания<br />
+                ОРГАНИК ПРОДАКТС УКРАИНА
+            </p>
+            <img src="/theme/images/child.jpg" alt="Ваш заказ принят" />
+        </div>
+    </div>
+</div>
+{/block}

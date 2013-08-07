@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$meta.title}</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="{$meta.description}"/>
+    <meta name="keywords" content="{$meta.keywords}" />
+    <meta name="robots" content="{$meta.robots}" />
+    <!--[if lt IE 9]>
+    <script>
+        document.createElement('header');
+        document.createElement('nav');
+        document.createElement('section');
+        document.createElement('article');
+        document.createElement('aside');
+        document.createElement('footer');
+        document.createElement('hgroup');
+    </script>
+    <![endif]-->
+	<link rel="shortcut icon" href="/favicon.png"/>
+    <link rel="stylesheet" href="/theme/css/main.css"/>
+    <!--[if IE 7]><link href="/theme/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->	
+</head>
+<body>
+<div class="page-container">
+    <div class="body">
+        <header>
+          <a href="/">
+            <div class="logo">
+                <div class="logo_title">
+                    <h1>ЛЕПТАДЕН®</h1>
+                </div>
+                <div class="logo_description">
+                    патентованное аюрведическое средство
+                </div>
+            </div>
+          </a>
+            <div class="title">
+                <span>Быстрое улучшение лактации</span>
+            </div>
+            <div class="social">
+                <div><img src="/theme/images/facebook.png" alt="facebook" class="fb"/></div>
+                <div><img src="/theme/images/vk.png" alt="vk"/></div>
+            </div>
+            <div class="advertising" itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+                <h4 itemprop="name" class="hide">Alarsin</h4>
+                <img src="/theme/images/alarsin.png" alt="Alarsin"/>
+                <div>лидер аюрведических исследований</div>
+            </div>
+            <button type="submit" class="order-button">Оформить заказ</button>
+            <button class="delivery-button"><h3>Заказ и доставка</h3></button>
+            {include file="menu\main.html"}
+            <div class="section-header-background"></div>
+        </header>
+        {block name="content"}{/block}
+    </div>
+</div>
+<script src="/theme/js/lib/jquery-1.9.1.js"></script>
+<script src="/theme/js/lib/jquery-ui-1.10.3.custom.js"></script>
+<script src="/theme/js/lib/jQuery.select.js"></script>
+<script src="/theme/js/lib/jquery.transform.js"></script>
+<script src="/theme/js/app.js"></script>
+</body>
+</html>
