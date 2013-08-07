@@ -1,6 +1,44 @@
 {extends file="layouts/base.html"}
 {block name="content"}
-        <h1>Контент для страницы аптек</h1>
-        <p>Область: {$region}</p>
-        <p>Город: {$city}</p>
+<section class="pharmacy">
+    <div class="pharmacy_header">
+        <div class="pharmacy_header_left">
+            <h3 class="white">Аптечные сети-партнеры</h3>
+            <p>
+                Здесь представлен список аптек, в которых Вы можете купить эффективные аюрведические препараты Алоез
+                Компаунд (Aloes Compound), Бангшил (Bangshil), Лептаден (Leptaden), Мирон (Myron), Фортеж (Fortege)
+                компании ALARSIN
+            </p>
+            <div class="pharmacy_header_left_select">
+                {selectbuilder items=$regions name='region' id='region' active=$regionAlias}
+            </div>
+            <div class="pharmacy_header_left_select">
+                {selectbuilder items=$cities name='city' id='city' active=$cityAlias prepend='Выберите город'}
+            </div>
+        </div>
+        <div class="pharmacy_header_right">
+            <img src="../../../theme/images/pharmacy_logo.png">
+        </div>
+    </div>
+    <div class="pharmacy_content">
+        {foreach $drugstores as $district => $stores}
+        <div class="pharmacy_content_region">
+            {if $cityAlias == 'kiev'}
+            <div class="pharmacy_content_region_header">
+                {$district}
+            </div>
+            {/if}
+            <div class="pharmacy_content_region_list">
+                {foreach $stores as $store}
+                <div class="pharmacy_content_region_list_item">
+                    <img src="{$store.logo}" alt="{$store.title}" width="16" />
+                    <h5>{$store.title}</h5>
+                    <span>{$store.address}</span>
+                </div>
+                {/foreach}
+            </div>
+        </div>
+        {/foreach}
+    </div>
+</section>
 {/block}

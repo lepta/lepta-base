@@ -9,6 +9,6 @@ $routesCfg = array(
     // NOTE: the order is important. More concrete rules must go first
     'routes' => array(
         // drugstores url
-        '/drugstores/[any1]/[any2]/' => '/drugstores/index/region/[any1]/city/[any2]/',
+        '/drugstores/city/[any1]/' => '/drugstores/index/city/[any1]/',
     )
 );

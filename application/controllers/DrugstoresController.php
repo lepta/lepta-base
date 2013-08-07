@@ -1,39 +1,75 @@
 <?php
 namespace application\controllers;
 
+use application\helpers\Url;
+use application\models\DrugstoreCity;
+use application\models\DrugstoreRegion;
 use application\models\Drugstores;
-use application\models\DrugstoresValidator;
 use system\basic\BaseController;
+use system\basic\exceptions\WrongInputParamsException;
 
 class DrugstoresController extends BaseController
 {
+    /**
+     * renders drugstores page
+     */
     public function indexAction()
     {
-        $region = $this->getParam('region', null);
-        $city = $this->getParam('city', null);
+        //$regionAlias = $this->getParam('region', 'kiev-region');
+        $cityAlias = $this->getParam('city', 'kiev');
 
-        $this->view->assignValue('region', $region);
-        $this->view->assignValue('city', $city);
+        //$region = new DrugstoreRegion();
+        //$region->findByParams(array('alias' => $regionAlias));
+
+        $city = new DrugstoreCity();
+        $city->findByParams(array('alias' => $cityAlias));
+
+        if ($city->isVoid()) {
+            throw new WrongInputParamsException('Wrong input city alias', 404);
+        }
+        $drugstores = new Drugstores();
+
+        $this->view->assignValue('drugstores', $drugstores->getList($city->id) );
+        $this->view->assignValue('regions', $drugstores->getRegions() );
+        $this->view->assignValue('cities', $drugstores->getCities($city->region_id) );
+        $this->view->assignValue('cityAlias', $cityAlias);
+        $this->view->assignValue('regionAlias', $city->getRegionAlias());
         $this->view->render('pages/drugstores.html');
     }
 
+    /**
+     * returns list of cities tied to this region
+     */
     public function getCitiesAction()
     {
-        $regionAlias = $this->getParam('region');
-        $validator = new DrugstoresValidator();
-        $validator->validate('region', $regionAlias);
-        if ($validator->isValid()) {
+        $input = $this->getInputSection('post');
+        $regionAlias = htmlspecialchars($input['region']);
+
+        $region = new DrugstoreRegion();
+        $region->findByParams(array('alias' => $regionAlias));
+        if (!$region->isVoid()) {
             $drugstores = new Drugstores();
-            $cities = $drugstores->getCities($regionAlias);
+            $cities = $drugstores->getCities($region->id);
             if ($cities) {
                 $result = array('result' => 1, 'data' => $cities);
             } else {
                 $result = array('result' => 0, 'data' => array());
             }
         } else {
-            $result = array('result' => 0, 'data' => $validator->getLastError()->getMessage() );
+            $result = array('result' => 0, 'data' => 'Invalid region identifier');
         }
 
         $this->getResponse()->setOutput(json_encode($result), 'json');
+    }
+
+    /**
+     *
+     */
+    public function getRedirectUrlAction()
+    {
+        $post = $this->getInputSection('post');
+        $cityAlias = htmlspecialchars($post['city']);
+
+        $this->getResponse()->setOutput(json_encode(array('result' => 1, 'data' => Url::getDrugstoresUrl($cityAlias))), 'json');
     }
 }

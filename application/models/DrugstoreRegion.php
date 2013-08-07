@@ -1,6 +1,7 @@
 <?php
 namespace application\models;
 
+use system\db\ActiveRecord;
 
 /**
  * Class DrugstoreRegion
