@@ -7,4 +7,8 @@ $routesCfg = array(
     'urlSuffix' => '/',
     // collection of routes to remap the predefined application flow
     // NOTE: the order is important. More concrete rules must go first
+    'routes' => array(
+        // drugstores url
+        '/drugstores/[any1]/[any2]/' => '/drugstores/index/region/[any1]/city/[any2]/',
+    )
 );
