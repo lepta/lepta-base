@@ -33,7 +33,7 @@ class DrugstoresController extends BaseController
         $this->view->assignValue('regions', $drugstores->getRegions() );
         $this->view->assignValue('cities', $drugstores->getCities($city->region_id) );
         $this->view->assignValue('cityAlias', $cityAlias);
-        $this->view->assignValue('regionAlias', $city->getRegionAlias());
+        $this->view->assignValue('regionId', $city->region_id);
         $this->view->render('pages/drugstores.html');
     }
 
@@ -43,10 +43,10 @@ class DrugstoresController extends BaseController
     public function getCitiesAction()
     {
         $input = $this->getInputSection('post');
-        $regionAlias = htmlspecialchars($input['region']);
+        $regionId = intval($input['region']);
 
         $region = new DrugstoreRegion();
-        $region->findByParams(array('alias' => $regionAlias));
+        $region->find($regionId);
         if (!$region->isVoid()) {
             $drugstores = new Drugstores();
             $cities = $drugstores->getCities($region->id);
@@ -63,7 +63,7 @@ class DrugstoresController extends BaseController
     }
 
     /**
-     *
+     * prepares the redirect url for the page
      */
     public function getRedirectUrlAction()
     {

@@ -31,9 +31,10 @@
             <div class="pharmacy_content_region_list">
                 {foreach $stores as $store}
                 <div class="pharmacy_content_region_list_item">
-                    <img src="{$store.logo}" alt="{$store.title}" width="16" />
+                    <img src="/userfiles/drugstores/{$store.logo}" alt="{$store.title}" width="16" />
                     <h5>{$store.title}</h5>
                     <span>{$store.address}</span>
+                    <span>тел. {$store.phone}</span>
                 </div>
                 {/foreach}
             </div>

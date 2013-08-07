@@ -19,7 +19,7 @@ class Drugstores extends BaseModel
     public function getList($cityId)
     {
         if (empty($cityId)) {
-            throw new WrongInputParamsException('Drugstores::getList expects regionId and cityId to be not null');
+            throw new WrongInputParamsException('Drugstores::getList expects cityId to be not null');
         }
 
         $list = $this->db->fetchAll(
@@ -33,7 +33,9 @@ class Drugstores extends BaseModel
                             FROM drugstores d
                             INNER JOIN drugstores_brands b ON (b.id = d.brand_id)
                             INNER JOIN drugstores_cities c ON (c.id = d.city_id)
-                            WHERE c.id = " . intval($cityId)
+                            WHERE c.id = " . intval($cityId) . "
+                            ORDER BY d.district, d.id
+                            "
                         );
         if ($list) {
             $resultList = array();
@@ -52,7 +54,7 @@ class Drugstores extends BaseModel
      */
     public function getRegions()
     {
-        return $this->db->fetchPairs("SELECT alias, title FROM drugstores_regions");
+        return $this->db->fetchPairs("SELECT id, title FROM drugstores_regions");
     }
 
     /**

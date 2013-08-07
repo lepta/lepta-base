@@ -97,6 +97,11 @@ class Url {
      */
     public static function getDrugstoresUrl($cityAlias = null)
     {
-        return self::_('drugstores', 'index', array('city' => $cityAlias));
+        if (!empty($cityAlias)) {
+            $params = array('city' => $cityAlias);
+        } else {
+            $params = array();
+        }
+        return self::_('drugstores', '', $params);
     }
 }
