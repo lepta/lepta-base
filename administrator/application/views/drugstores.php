@@ -35,17 +35,11 @@ a:hover
         <a href='<?php echo site_url('drugstores')?>'>Аптеки</a>
 	</div>
 	<div style="margin-top: 20px">
-		<a href='<?php echo $baseurl ?>/all'>Все</a> | 
-		<a href='<?php echo $baseurl ?>/leptaden.com.ua'>Лептаден</a> | 
+        <a href='<?php echo site_url('drugstores')?>'>Аптеки</a> |
+        <a href='<?php echo site_url('drugstores/brands')?>'>Сети аптек</a> |
+		<a href='<?php echo site_url('drugstores/cities')?>'>Города</a> |
+		<a href='<?php echo site_url('drugstores/regions')?>'>Регионы</a> |
 	</div>
-	<div style="margin-top: 20px">
-		<a href='<?php echo $siteurl ?>/delivered_unpaid'>Доставлен, не оплачен</a> | 
-		<a href='<?php echo $siteurl ?>/delivered_paid'>Доставлен, оплачен</a> | 
-		<a href='<?php echo $siteurl ?>/new'>Новый заказ</a> | 
-		<a href='<?php echo $siteurl ?>/undelivered_paid'>Оплачен, не доставлен</a> | 
-		<a href='<?php echo $siteurl ?>/confirmed'>Подтверждён, выполняется</a> | 
-	</div>
-	<div style='height:20px;'></div>  
     <div>
 		<?php echo $output; ?>
     </div>

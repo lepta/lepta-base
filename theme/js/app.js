@@ -140,7 +140,7 @@ $(function(){
         $.ajax({
             type: "POST",
             url: "/drugstores/getCities/",
-            data: region,
+            data: {"region": region},
             success: onGetCityListSuccess,
             error: onGetCityListError
         });

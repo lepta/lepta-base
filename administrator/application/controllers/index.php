@@ -18,7 +18,7 @@ class Index extends CI_Controller {
 	
 	function _example_output($output = null)
 	{
-		$this->load->view('example.php',$output);	
+		$this->load->view('index.php',$output);
 	}
 
 	function index()

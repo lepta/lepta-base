@@ -10,16 +10,10 @@
                 компании ALARSIN
             </p>
             <div class="pharmacy_header_left_select">
-                <select id="region" name="region">
-                    <option value="0" selected>Киевская область</option>
-                </select>
+                {selectbuilder items=$regions name='region' id='region' active=$regionAlias}
             </div>
             <div class="pharmacy_header_left_select">
-                <select id="city" name="city">
-                    <option value="0">Выбрать город</option>
-                    <option value="1" selected>Киев</option>
-                    <option value="2">Борисполь</option>
-                </select>
+                {selectbuilder items=$cities name='city' id='city' active=$cityAlias prepend='Выберите город'}
             </div>
         </div>
         <div class="pharmacy_header_right">
@@ -27,18 +21,25 @@
         </div>
     </div>
     <div class="pharmacy_content">
+        {foreach $drugstores as $district => $stores}
         <div class="pharmacy_content_region">
+            {if $cityAlias == 'kiev'}
             <div class="pharmacy_content_region_header">
-                Дарницкий р-н
+                {$district}
             </div>
+            {/if}
             <div class="pharmacy_content_region_list">
+                {foreach $stores as $store}
                 <div class="pharmacy_content_region_list_item">
-                    <img src="../../../theme/images/good_day_icon.png" alt=""/>
-                    <h5> Аптека доброго дня</h5>
-                    <span>адрес здесь адрес здесь адрес здесь</span>
+                    <img src="/userfiles/drugstores/{$store.logo}" alt="{$store.title}" width="16" />
+                    <h5>{$store.title}</h5>
+                    <span>{$store.address}</span>
+                    <span>тел. {$store.phone}</span>
                 </div>
+                {/foreach}
             </div>
         </div>
+        {/foreach}
     </div>
 </section>
 {/block}

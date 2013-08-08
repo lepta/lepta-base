@@ -28,10 +28,11 @@ a:hover
 </head>
 <body>
 	<div>
-		<a href='<?php echo site_url('index/content')?>'>Контент</a> |
-		<a href='<?php echo site_url('index/meta')?>'>Мета Теги</a> |
-		<a href='<?php echo site_url('index/reviews')?>'>Отзывы</a> |
-		<a href='<?php echo site_url('orders/index/all')?>'>Заказы</a> |
+        <a href='<?php echo site_url('index/content')?>'>Контент</a> |
+        <a href='<?php echo site_url('index/meta')?>'>Мета Теги</a> |
+        <a href='<?php echo site_url('index/reviews')?>'>Отзывы</a> |
+        <a href='<?php echo site_url('orders/index/all')?>'>Заказы</a> |
+        <a href='<?php echo site_url('drugstores')?>'>Аптеки</a>
 	</div>
 	<div style='height:20px;'></div>  
     <div>
