@@ -1,0 +1,102 @@
+<div id="orderModal" class="modal hide" style="opacity: 0;">
+    <div class="modal-bg-right"></div>
+    <div class="modal-inner">
+        <span class="close"></span>
+        <div class="form-left">
+            <span>Оформление заказа</span>
+            <img src="/theme/images/moda-alarsin.png" alt=""/>
+        </div>
+        <div class="form-right">
+            <form name="orderForm" action="/order/store/" method="post">
+                <fieldset>
+                    <div class="control-group">
+                        <label class="control-label" for="quantity">Количество упаковок:</label>
+                        <div class="controls">
+                            <select id="quantity" class="small" name="items_amount">
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="name">Имя и фамилия получателя*:</label>
+                        <div class="controls">
+                            <input type="text" id="name" name="customer_name" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="phone">Номер телефона*:</label>
+                        <div class="controls">
+                            <input type="text" id="phone" name="customer_phone" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Email*:</label>
+                        <div class="controls">
+                            <input type="text" id="customer_email" name="customer_email" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="delivery">Способ доставки*:</label>
+                        <div class="controls">
+                            <select id="delivery" name="shipment_method" class="medium" required>
+                                <option value="Курьер" selected>Курьером по Киеву</option>
+                                <option value="Новая почта">Новая почта</option>
+                                <option value="Укрпочта">Укрпочта</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <span class="legend">Адрес доставки: </span>
+                    <div class="control-group">
+                        <label class="control-label" for="city">Город*:</label>
+                        <div class="controls">
+                            <input type="text" id="city" name="shipment_city" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="street">Улица*:</label>
+                        <div class="controls">
+                            <input type="text" id="street" name="shipment_street" required>
+                        </div>
+                    </div>
+                    <div class="control-group float-left-group" >
+                        <label class="control-label" for="house">Дом №*:</label>
+                        <div class="controls">
+                            <input type="text" id="house" class="small" name="shipment_building" required>
+                        </div>
+                        <label class="control-label float-left" for="apartment">Квартира/офис №*:	</label>
+                        <div class="controls float-left">
+                            <input type="text" id="apartment" class="small" name="shipment_apartment" required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="pay">Способ оплаты*:</label>
+                        <div class="controls">
+                            <select id="pay" name="payment_method" class="medium" required>
+                                <option value="Наличными" selected>Наличные</option>
+                                <option value="Безналичный расчет">Безналичный расчет</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="order-button">Оформить заказ</button>
+                    <div class="control-group float-right-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" required> Я согласен получать рассылку новостей Органик Продактс Украина
+                            </label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="items_price" value="168" />
+                    <input type="hidden" name="discount" value="0" />
+                    <input type="hidden" name="site" value="leptaden.com.ua" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

@@ -64,3 +64,24 @@ section.first .question-area{
 .ui-accordion-header-active  .collapse-icon.white{
     background: url("../images/collapse-icon-open-white.png") no-repeat;
 }
+span.customSelect{
+    border: 1px solid #dedede;
+}
+.pharmacy_header_left_select{
+    zoom: 1;
+    display: inline;
+    height: 43px;
+}
+.pharmacy_header_left, .pharmacy_header_right {
+    zoom: 1;
+    display: inline;
+}
+.pharmacy_content_region_list_item{
+    zoom: 1;
+    display: inline;
+}
+.pharmacy_content_region_list_item img, .pharmacy_content_region_list_item h5, .pharmacy_content_region_list_item span {
+    zoom: 1;
+    display: inline;
+}
+
