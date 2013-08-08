@@ -5,10 +5,6 @@ use application\models\Order;
 use system\basic\View;
 use system\mailer\Mailer;
 
-/**
- * Class MailingHelper
- * @package application\helpers
- */
 class MailingHelper {
     /**
      * @param Order $order
@@ -26,7 +22,6 @@ class MailingHelper {
 		$mailFrom = 'zakaz@' . $order->site;
         $mailer = new Mailer();
         $mailer->IsHTML(true);
-        $mailer->IsSendmail();
         $mailer->CharSet = 'UTF-8';
         $mailer->Subject = 'Заказ №' . $order->id . ' с сайта ' . $order->site;
         $mailer->SetFrom($mailFrom, 'ZAKAZ LEPTADEN');
@@ -37,11 +32,6 @@ class MailingHelper {
 
         $mailer->ClearAddresses();
         $mailer->AddAddress('kuzmenko.m@smartclick.com.ua');
-		/*
-        $mailer->AddAddress('registrator73@gmail.com');
-        $mailer->AddAddress('glazko.a@profilab.com.ua');
-        $mailer->AddAddress('kovalskaya.v@orgpro.com.ua');		
-		*/
         $mailer->MsgHTML($administartorMail);
         $mailer->Send();
         return;
