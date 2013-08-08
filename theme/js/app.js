@@ -84,13 +84,16 @@ $(function(){
     $(".modal .close").on("click", function(){
         hide($(".modal"));
     })
-    $(".pharmacy_header_left_select select").on("change", function(){
-        getCityList($(this).val());
-    })
     $(".section-header").on("click", function(){
         var hash = $(this).attr("data-hash");
         setActiveMenu($("[href='#" + hash + "']"));
         window.location.hash = hash;
+    })
+    $(".pharmacy_header_left_select select#region").on("change", function(){
+        getCityList($(this).val());
+    });
+    $(".pharmacy_header_left_select select#city").on("change", function(){
+        getCityContent($(this).val());
     })
     // privet functions
     function show(modal){
@@ -120,13 +123,15 @@ $(function(){
         function onGetCityListSuccess(result){
             if(!result) return
             var cityList = $.parseJSON(result.data),
+                select = ".pharmacy_header_left_select select#city",
                 options = "";
 
+            $(select + ' option:not(:first)').remove();
             $.each(cityList, function(key, value) {
                 options += '<option value="' + key + '">' + value + '</option>';
             });
 
-            $(".pharmacy_header_left_select select#city").html(options);
+            $(select).append(options);
         };
 
         function onGetCityListError(error){
@@ -140,4 +145,23 @@ $(function(){
             error: onGetCityListError
         });
     };
+
+    function getCityContent(city){
+
+        function onGetCityContentSuccess(result){
+
+        };
+
+        function onGetCityContentError(error){
+            console && console.log(error)
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/drugstores/getRedirectUrl/",
+            data: city,
+            success: onGetCityContentSuccess,
+            error: onGetCityContentError
+        });
+    }
 })
