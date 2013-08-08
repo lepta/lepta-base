@@ -118,7 +118,6 @@
                         customSelectSpan.removeClass(getClass('Changed'));
                     })
                     .on('mouseup', function (e) {
-                        console.log(customSelectSpan.hasClass(getClass('Open')))
                         if( !customSelectSpan.hasClass(getClass('Open'))){
                             // if FF and there are other selects open, just apply focus
                             if($('.'+getClass('Open')).not(customSelectSpan).length>0 && typeof InstallTrigger !== 'undefined'){

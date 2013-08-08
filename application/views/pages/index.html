@@ -75,7 +75,6 @@
     </div>
 
     <div class="section-header leptaden-header" data-hash="{$content.leptaden.alias}" itemscope itemtype="http://schema.org/Product">
-        <div class="section-background"></div>
         <h2 itemprop="name">Лептаден®</h2><strong>{$content.leptaden.title}</strong>
         <div class="collapse-icon"></div>
         <div class="section-header-background"></div>
@@ -115,6 +114,28 @@
             <img src="/theme/images/review-more.png" alt="еще"/>
         </div>
     </div>
+
+    <div class="section-header" data-hash="">
+        <div class="section-background header bottom"></div>
+        <h2>Вопрос/Ответ</h2>
+        <div class="collapse-icon"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body">
+    </div>
+
+    <div class="section-header green" data-hash="">
+        <div class="section-background" ></div>
+        <h2 class="white">{$content.guarantee.title}</h2>
+        <div class="collapse-icon white"></div>
+        <div class="section-header-background"></div>
+    </div>
+    <div class="section-body green">
+        <div class="text-section text--white" >
+            {$content.guarantee.text}
+        </div>
+    </div>
+
 </div>
 <section id="all">
     <div class="section-body">
@@ -177,7 +198,7 @@
                     <div class="control-group">
                         <label class="control-label" for="customer_email">Email*:</label>
                         <div class="controls">
-                            <input type="text" id="email" name="customer_email" required>
+                            <input type="text" id="customer_email" name="customer_email" required>
                         </div>
                     </div>
                     <div class="control-group">

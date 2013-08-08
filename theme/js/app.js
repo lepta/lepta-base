@@ -38,7 +38,6 @@ $(function(){
     $( "#accordion" ).accordion(options);
 
     if(hash){
-		console.log(hash);
 		if (hash == '#success') {
 			// show modal popup for successful order
 			show($('#successModal'));
@@ -48,7 +47,7 @@ $(function(){
 		}
     }
 
-    $("select").customSelect();
+    $("select").customSelect && $("select").customSelect();
 
     // add listeners
     $("nav li").on("click", function(event){
@@ -113,25 +112,33 @@ $(function(){
     };
 
     function navigate(event){
-        var target = $(event.target).attr("href");
-        $( "#accordion" ).accordion( "option", "active", $('.section-header').index($(".section-header[data-hash='" + target.slice(1) + "']")));
-        window.location.hash = target;
+        var target = $(event.target),
+            targetHref;
+        if(!$(target).hasClass("no-navigate")){
+            targetHref = target.attr("href");
+            $( "#accordion" ).accordion( "option", "active", $('.section-header').index($(".section-header[data-hash='" + targetHref.slice(1) + "']")));
+            window.location.href = location.origin + "/" + targetHref;
+        }
+
+
     };
     function getCityList(region){
         if(!region) return
+        var select = ".pharmacy_header_left_select select#city";
+
+        $(select + ' option:first').attr("selected", "selected");
+        $(select + ' option:not(:first)').remove();
+        $(select).attr("disabled","disabled").trigger('update');
 
         function onGetCityListSuccess(result){
             if(!result) return
-            var cityList = $.parseJSON(result.data),
-                select = ".pharmacy_header_left_select select#city",
+            var cityList = $.parseJSON(result).data,
                 options = "";
 
-            $(select + ' option:not(:first)').remove();
             $.each(cityList, function(key, value) {
                 options += '<option value="' + key + '">' + value + '</option>';
             });
-
-            $(select).append(options);
+            $(select).append(options).attr("disabled", false);
         };
 
         function onGetCityListError(error){
@@ -147,8 +154,12 @@ $(function(){
     };
 
     function getCityContent(city){
-
         function onGetCityContentSuccess(result){
+            if(!result) return
+            var redirectUrl = $.parseJSON(result).data;
+            if(redirectUrl){
+                location.href = redirectUrl;
+            }
 
         };
 
@@ -159,7 +170,7 @@ $(function(){
         $.ajax({
             type: "POST",
             url: "/drugstores/getRedirectUrl/",
-            data: city,
+            data: {"city": city},
             success: onGetCityContentSuccess,
             error: onGetCityContentError
         });

@@ -2,6 +2,11 @@ article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
     display:block;
 }
+/* fonts */
+.text--white{
+    color:#fff;
+}
+
 body{
     font-family: Calibri;
     margin: 0;
@@ -9,6 +14,7 @@ body{
     color: #565555;
     position: relative;
 }
+
 .page-container{
     position: relative;
 }
@@ -140,7 +146,7 @@ nav ul{
 }
 nav ul li{
     display: inline-block;
-    margin: 0 26px;
+    margin: 0 22px;
 }
 nav ul li a{
     font-size: 14px;
@@ -176,6 +182,9 @@ section{
 .pink{
     background: url("../images/pink.png");
 }
+.green{
+    background: url("../images/green.png");
+}
 .blue{
     background: url("../images/blue.png");
 }
@@ -184,6 +193,10 @@ section{
 .blue,
 .blue h2{
     color: #fff;
+}
+.green .text-section{
+    width: 100%;
+    font-size: 14px;
 }
 .section-header{
     padding: 20px 40px;
@@ -714,6 +727,13 @@ input[type="text"].medium{
     margin: 10px 20px 10px 0;
     position: relative;
 }
+.pharmacy_header_left_select .customSelect{
+    font-size: 14px;
+    width: 185px;
+}
+.pharmacy_header_left_select select{
+    font-size: 13px !important;
+}
 .pharmacy_content{
     padding: 20px 40px;
 }
@@ -745,6 +765,7 @@ input[type="text"].medium{
 
 }
 .pharmacy_content_region_list_item span{
+    font-size: 13px;
     margin-left: 35px;
     line-height: 1;
     line-height: 14px;
