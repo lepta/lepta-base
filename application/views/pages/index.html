@@ -115,13 +115,17 @@
         </div>
     </div>
 
-    <div class="section-header" data-hash="">
+    <div class="section-header" data-hash="faq">
         <div class="section-background header bottom"></div>
         <h2>Вопрос/Ответ</h2>
         <div class="collapse-icon"></div>
         <div class="section-header-background"></div>
     </div>
     <div class="section-body">
+        {foreach $faq as $faqItem}
+        <div class="question">{$faqItem.question}</div>
+        <div class="answer">{$faqItem.answer}</div>
+        {/foreach}
     </div>
 
     <div class="section-header green" data-hash="{$content.guarantee.alias}">

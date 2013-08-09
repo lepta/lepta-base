@@ -28,32 +28,26 @@ class Index extends CI_Controller {
 	
 	function content()
 	{
-		try{
-			$crud = new grocery_CRUD();
+        $crud = new grocery_CRUD();
 
-            $crud->set_language('russian');
-			$crud->set_table('content');
-			$crud->set_subject('контент');
-            $crud->field_type('text', 'text');
-            $crud->unset_columns('section', 'alias');
-            $crud->unset_edit_fields('section', 'alias');
-            $crud->display_as('title', 'Заголовок раздела');
-            $crud->display_as('text', 'Текст раздела');
+        $crud->set_language('russian');
+        $crud->set_table('content');
+        $crud->set_subject('контент');
+        $crud->field_type('text', 'text');
+        $crud->unset_columns('section', 'alias');
+        $crud->unset_edit_fields('section', 'alias');
+        $crud->display_as('title', 'Заголовок раздела');
+        $crud->display_as('text', 'Текст раздела');
 
-			$output = $crud->render();
-			
-			$this->_example_output($output);
-			
-		}catch(Exception $e){
-			show_error($e->getMessage().' --- '.$e->getTraceAsString());
-		}
+        $output = $crud->render();
+
+        $this->_example_output($output);
 	}
 	
 	function meta()
 	{
         $crud = new grocery_CRUD();
 
-        $crud->set_language('russian');
         $crud->set_table('seo');
         $crud->set_subject('Мета данные');
         $crud->field_type('meta_description', 'text');
@@ -74,7 +68,6 @@ class Index extends CI_Controller {
 	{
         $crud = new grocery_CRUD();
 
-        $crud->set_language('russian');
         $crud->set_table('reviews');
         $crud->set_subject('отзыв');
         $crud->field_type('text', 'text');
@@ -87,5 +80,20 @@ class Index extends CI_Controller {
         $output = $crud->render();
 
         $this->_example_output($output);
-	}	
+	}
+
+    function faq()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('faq');
+        $crud->set_subject('вопрос/ответ');
+        $crud->display_as('question', 'Текст вопроса');
+        $crud->display_as('answer', 'Текст ответа');
+        $crud->display_as('is_visible', 'Состояние');
+
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
 }
