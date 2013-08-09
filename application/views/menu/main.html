@@ -5,12 +5,12 @@
 {/if}
 <nav>
     <ul>
-        <li><a href="{$mainurl}#breast_milk" class="active">Грудное молоко</a></li>
-        <li><a href="{$mainurl}#food">Питание при кормлении</a></li>
-        <li><a href="{$mainurl}#reduced_lactation">Снижение лактации </a></li>
-        <li><a href="{$mainurl}#improve_lactation">Как улучшить лактацию?</a></li>
-        <li><a href="{$mainurl}#leptaden">Лептаден</a></li>
-        <li><a href="{$mainurl}#reviews">Отзывы</a></li>
-        <li><a href="{urlbuilder section='drugstores'}" class="no-navigate">Аптеки</a></li>
+        {foreach $mainmenu as $menuitem}
+            {if $menuitem.active}
+                <li><a href="{$mainurl}{$menuitem.link}" class="active">{$menuitem.text}</a></li>
+            {else}
+                <li><a href="{$mainurl}{$menuitem.link}">{$menuitem.text}</a></li>
+            {/if}
+        {/foreach}
     </ul>
 </nav>

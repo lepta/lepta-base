@@ -1,6 +1,7 @@
 <?php
 namespace application\controllers;
 
+use application\helpers\Menu;
 use application\helpers\Url;
 use application\models\DrugstoreCity;
 use application\models\DrugstoreRegion;
@@ -34,6 +35,7 @@ class DrugstoresController extends BaseController
         $this->view->assignValue('cities', $drugstores->getCities($city->region_id) );
         $this->view->assignValue('cityAlias', $cityAlias);
         $this->view->assignValue('regionId', $city->region_id);
+        $this->view->assignValue('mainmenu', Menu::getMainMenu('drugstores'));
         $this->view->render('pages/drugstores.html');
     }
 

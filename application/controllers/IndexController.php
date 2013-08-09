@@ -1,6 +1,7 @@
 <?php
 namespace application\controllers;
 
+use application\helpers\Menu;
 use application\models\Leptaden;
 use application\models\ReviewManager;
 use application\models\seo\SeoFactory;
@@ -18,6 +19,7 @@ class IndexController extends BaseController {
 		$this->view->assignValue('content', $content);
 		$this->view->assignValue('reviews', $reviewsManager->getList());
         // for correct menu rendering
+        $this->view->assignValue('mainmenu', Menu::getMainMenu('breast_milk'));
         $this->view->assignValue('page', 'index');
         $this->view->render('pages/index.html');
     }
