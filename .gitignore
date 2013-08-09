@@ -15,4 +15,5 @@ Thumbs.db
 _cache/
 logs/
 application/configs/db.php
+application/configs/application.php
 administrator/application/config/database.php
