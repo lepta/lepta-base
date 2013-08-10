@@ -68,6 +68,9 @@ $(function(){
     $(".delivery-button").on("click", function(){
         show($("#deliveryModal"));
     })
+    $(".review-button").on("click", function(){
+        show($("#reviewModal"));
+    })
     $("#deliveryModal .order-button").on("click", function(){
         hide($("#deliveryModal"));
         show($("#orderModal"));
