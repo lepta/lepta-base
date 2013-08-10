@@ -14,41 +14,46 @@ class Menu
     public static function getMainMenu($active = null)
     {
         $menu = array(
-            'templates' => array(
-                'text' => 'Templates',
-                'link' => Url::getCatalogUrl('powerpoint'),
+            'breast_milk' => array(
+                'text' => 'Грудное молоко',
+                'link' => '#breast_milk',
                 'active' => false,
             ),
-            'features' => array(
-                'text' => 'Features',
-                'link' => Url::getStaticUrl('features'),
+            'food' => array(
+                'text' => 'Питание при кормлении',
+                'link' => '#food',
                 'active' => false
             ),
-            'contact-us' => array(
-                'text' => 'Contact Us',
-                'link' => Url::getFeedbackUrl(),
+            'reduced_lactation' => array(
+                'text' => 'Снижение лактации',
+                'link' => '#reduced_lactation',
                 'active' => false
             ),
-            'profile' => array(
-                'text' => 'Members',
-                'link' => Url::getProfileUrl(),
+            'improve_lactation' => array(
+                'text' => 'Как улучшить лактацию?',
+                'link' => '#improve_lactation',
                 'active' => false
-            )
+            ),
+            'leptaden' => array(
+                'text' => 'Лептаден',
+                'link' => '#leptaden',
+                'active' => false
+            ),
+            'reviews' => array(
+                'text' => 'Отзывы',
+                'link' => '#reviews',
+                'active' => false
+            ),
+            'drugstores' => array(
+                'text' => 'Аптеки',
+                'link' => 'drugstores/',
+                'active' => false
+            ),
         );
 
         if (!is_null($active) && array_key_exists($active, $menu)) {
             $menu[$active]['active'] = true;
         }
         return array_values($menu);
-    }
-
-    /**
-     * @return array
-     */
-    public static function getHomeMenu()
-    {
-        $menu = self::getMainMenu();
-        array_unshift($menu, array('text' => 'Home', 'link' => Url::getMainUrl(), 'active' => true));
-        return $menu;
     }
 }

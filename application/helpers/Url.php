@@ -83,12 +83,12 @@ class Url {
     }
 
     /**
-     * returns correct domain url without subdomain part
+     * @param null $hash
      * @return string
      */
-    public static function getMainUrl()
+    public static function getMainUrl($hash = null)
     {
-        return 'http://' . $_SERVER['SERVER_NAME'] . '/';
+        return 'http://' . $_SERVER['SERVER_NAME'] . '/' . ($hash ? '#' . $hash : '');
     }
 
     /**
