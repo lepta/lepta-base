@@ -128,10 +128,12 @@ header .phone__number{
     cursor: pointer;
 }
 header .delivery-button{
-    vertical-align: bottom;
+    margin-top: 15px;
+    height: 45px;
+    vertical-align: middle;
     font-size: 10px;
     line-height: 1;
-    padding: 23px 10px 0 10px;
+    padding: 0px 10px 0 32px;
     width: 84px;
     display: inline-block;
     background: url("../images/delivery_bg_header.png");
@@ -316,6 +318,7 @@ section.first img{
     display: inline-block;
     margin-right: 10px;
     color: #08498f;
+    text-transform: uppercase;
 }
 .leptaden .order-button {
     border: 0;
@@ -352,8 +355,10 @@ section.first img{
     background: url("../images/delivery_bg.png") no-repeat;
 }
 .delivery-button h3{
-    font-size: 11px;
+    font-size: 9px;
     font-weight: bold;
+    text-transform: uppercase;
+    line-height: 12px;
 }
 .leptaden .text-section{
     width: 33%;
