@@ -35,8 +35,8 @@ $(function(){
                 }
             }
         };
-    $( "#accordion" ).accordion(options);
 
+    $( "#accordion" ).accordion(options);
     if(hash){
 		if (hash == '#success') {
 			// show modal popup for successful order
@@ -48,7 +48,7 @@ $(function(){
     }
 
     $("select").customSelect && $("select").customSelect();
-
+    $(".faq-accordion .question .answer").eq(0).slideToggle();
     // add listeners
     $("nav li").on("click", function(event){
         setActiveMenu(event.target);
@@ -94,6 +94,9 @@ $(function(){
     $(".pharmacy_header_left_select select#city").on("change", function(){
         getCityContent($(this).val());
     })
+    $(".faq-accordion .question").on("click", function(){
+        $(this).find('.answer').slideToggle();
+    });
     // privet functions
     function show(modal){
         modal.removeClass("hide");

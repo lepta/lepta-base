@@ -71,7 +71,7 @@ header{
 header > a{
     text-decoration: none;
 }
-header .logo, header .title, header .social, header .advertising, header .order-button{
+header .logo, header .title, header .order-button, header .phone{
     display: inline-block;
     vertical-align: middle;
 }
@@ -92,20 +92,25 @@ header .title{
     font-size: 14.5px;
     margin: 0 8px;
 }
-header .social{
-    margin: 0 5px;
-}
 header .advertising{
     font-size: 10px;
     color: #565555;
     text-align: center;
+    margin-top: 10px;
+}
+.advertising-text{
+    display: inline-block;
     width: 100px;
-    margin: 0 8px;
+    text-align: left;
+    margin-left: 20px;
+}
+header .phone__number{
+    color: #565555;
+    font-size: 24px;
+    font-weight: bold;
 }
 .order-button{
-    margin-left: 10px;
-}
-.order-button{
+    margin-left: 6px;
     text-decoration: none;
     display: block;
     margin-top: 10px;
@@ -769,4 +774,50 @@ input[type="text"].medium{
     margin-left: 35px;
     line-height: 1;
     line-height: 14px;
+}
+
+/* ----- faq ----*/
+.faq-accordion{
+    padding-top: 15px;
+    margin-bottom: -15px;
+}
+.question{
+    border-top: 1px solid #dfdfdf;
+}
+.question:first-child{
+    border-top: none;
+}
+.answer{
+    margin: 10px 0;
+    color: #6c6c6c;
+    font-size: 14px;
+    margin: 35px 0 35px 0;
+}
+.answer p{
+    margin: 0;
+}
+.answer-icon,
+.answer-text{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.answer-text{
+    width: 93%;
+}
+.answer-icon{
+    width: 6%;
+}
+.answer-icon img{
+    position: relative;
+}
+.question h3{
+    color: #6c6c6c;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.question h3:hover{
+    color: #6cd48e;
 }
