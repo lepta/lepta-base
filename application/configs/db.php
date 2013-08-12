@@ -4,7 +4,7 @@ $dbCfg = array(
     'dev' => array(
         'host' => 'localhost',
         'login' => 'root',
-        'password' => '',
+        'password' => 'root',
         'database' => 'leptaden'
     ),
 	'dev2' => array(
@@ -14,10 +14,10 @@ $dbCfg = array(
         'database' => 'leptaden'
 	),
     'test' => array(
-        'host' => 'localhost',
-        'login' => '',
-        'password' => '',
-        'database' => ''
+        'host' => 'mysql.hostinger.com.ua',
+        'login' => 'u765017674_lepta',
+        'password' => 'leptaden123',
+        'database' => 'u765017674_lepta'
     ),
     'production' => array(
         'host' => 'localhost',
