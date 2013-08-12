@@ -4,7 +4,7 @@ $dbCfg = array(
     'dev' => array(
         'host' => 'localhost',
         'login' => 'root',
-        'password' => 'root',
+        'password' => '',
         'database' => 'leptaden'
     ),
 	'dev2' => array(

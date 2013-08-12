@@ -116,13 +116,28 @@
         <button class="review-button"><h3>ДОБАВИТЬ ОТЗЫВ</h3></button>
     </div>
 
-    <div class="section-header" data-hash="">
+    <div class="section-header" data-hash="faq">
         <div class="section-background header bottom"></div>
         <h2>Вопрос/Ответ</h2>
         <div class="collapse-icon"></div>
         <div class="section-header-background"></div>
     </div>
     <div class="section-body">
+        <div class="faq-accordion">
+            {foreach $faq as $faqItem}
+            <div class="question">
+                <h3>{$faqItem.question}</h3>
+                <div class="answer hide">
+                    <div class="answer-icon">
+                        <img src="../../../theme/images/answer-icon.png" alt="Ответ"/>
+                    </div>
+                    <div class="answer-text">
+                        {$faqItem.answer}
+                    </div>
+                </div>
+            </div>
+            {/foreach}
+        </div>
     </div>
 
     <div class="section-header green" data-hash="{$content.guarantee.alias}">

@@ -32,7 +32,8 @@ a:hover
         <a href='<?php echo site_url('index/meta')?>'>Мета Теги</a> |
         <a href='<?php echo site_url('index/reviews')?>'>Отзывы</a> |
         <a href='<?php echo site_url('orders/index/all')?>'>Заказы</a> |
-        <a href='<?php echo site_url('drugstores')?>'>Аптеки</a>
+        <a href='<?php echo site_url('drugstores')?>'>Аптеки</a> |
+        <a href='<?php echo site_url('index/faq')?>'>Faq</a>
 	</div>
 	<div style="margin-top: 20px">
         <a href='<?php echo site_url('drugstores')?>'>Аптеки</a> |
