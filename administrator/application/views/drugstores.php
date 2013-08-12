@@ -38,6 +38,7 @@ a:hover
 	<div style="margin-top: 20px">
         <a href='<?php echo site_url('drugstores')?>'>Аптеки</a> |
         <a href='<?php echo site_url('drugstores/brands')?>'>Сети аптек</a> |
+        <a href='<?php echo site_url('drugstores/districts')?>'>Районы городов</a> |
 		<a href='<?php echo site_url('drugstores/cities')?>'>Города</a> |
 		<a href='<?php echo site_url('drugstores/regions')?>'>Регионы</a> |
 	</div>

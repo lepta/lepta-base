@@ -16,30 +16,52 @@ class Drugstores extends CI_Controller {
 
 	function index($site = null, $status = null)
 	{
-        $crud = new grocery_CRUD();
+        $this->load->library('ajax_grocery_CRUD');
+        $crud = new ajax_grocery_CRUD();
 
-        $crud->set_language('russian');
         $crud->set_table('drugstores');
         $crud->set_relation('brand_id', 'drugstores_brands', 'title');
         $crud->set_relation('city_id', 'drugstores_cities', 'title');
+        $crud->set_relation('district_id', 'drugstores_districts', 'title');
+        $crud->set_relation_dependency('district_id', 'city_id', 'city_id');
         $crud->set_subject('аптеку');
         $crud->order_by('id', 'desc');
         $crud->display_as('brand_id', 'Сеть аптек');
         $crud->display_as('city_id', 'Город');
+        $crud->display_as('district_id', 'Район города');
         $crud->display_as('district', 'Район города');
         $crud->display_as('address', 'Адрес');
-        $crud->display_as('phone', 'Телефон');
+        $crud->display_as('add_address1', 'Ориентир 1');
+        $crud->display_as('add_address2', 'Ориентир 2');
+        $crud->display_as('add_address3', 'Ориентир 3');
+        $crud->display_as('phone1', 'Телефон 1');
+        $crud->display_as('phone2', 'Телефон 2');
+        $crud->display_as('phone3', 'Телефон 3');
         $output = $crud->render();
         $output->baseurl = 'http://' . $_SERVER['SERVER_NAME'] . '/administrator/orders/index';
         $output->siteurl = $output->baseurl . ($site ? '/' .$site : '');
         $this->load->view('drugstores.php', $output);
 	}
 
+    public function districts()
+    {
+        $crud = new grocery_CRUD();
+
+        $crud->set_table('drugstores_districts');
+        $crud->set_relation('city_id', 'drugstores_cities', 'title');
+        $crud->set_subject('район города');
+        $crud->display_as('title', 'Название района');
+        $crud->display_as('city_id', 'Город');
+        $crud->order_by('id');
+        $output = $crud->render();
+
+        $this->load->view('drugstores.php', $output);
+    }
+
     public function cities()
     {
         $crud = new grocery_CRUD();
 
-        $crud->set_language('russian');
         $crud->set_table('drugstores_cities');
         $crud->set_relation('region_id', 'drugstores_regions', 'title');
         $crud->set_subject('город');

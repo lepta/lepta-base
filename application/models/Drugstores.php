@@ -27,20 +27,26 @@ class Drugstores extends BaseModel
                                 d.id,
                                 b.title as title,
                                 b.logo,
-                                d.district,
+                                dt.title as district_title,
                                 d.address,
-                                d.phone
+                                d.add_address1,
+                                d.add_address2,
+                                d.add_address3,
+                                d.phone1,
+                                d.phone2,
+                                d.phone3
                             FROM drugstores d
                             INNER JOIN drugstores_brands b ON (b.id = d.brand_id)
                             INNER JOIN drugstores_cities c ON (c.id = d.city_id)
+                            LEFT JOIN drugstores_districts dt ON (dt.id = d.district_id)
                             WHERE c.id = " . intval($cityId) . "
-                            ORDER BY d.district, d.id
+                            ORDER BY dt.title, d.id
                             "
                         );
         if ($list) {
             $resultList = array();
             foreach($list as $listItem) {
-                $key = !empty($listItem['district']) ? $listItem['district'] : 'none';
+                $key = !empty($listItem['district_title']) ? $listItem['district_title'] : 'none';
                 $resultList[$key][] = $listItem;
             }
             return $resultList;

@@ -23,7 +23,7 @@
     <div class="pharmacy_content">
         {foreach $drugstores as $district => $stores}
         <div class="pharmacy_content_region">
-            {if $cityAlias == 'kiev'}
+            {if $district != 'none'}
             <div class="pharmacy_content_region_header">
                 {$district}
             </div>
@@ -34,7 +34,12 @@
                     <img src="/userfiles/drugstores/{$store.logo}" alt="{$store.title}" width="16" />
                     <h5>{$store.title}</h5>
                     <span>{$store.address}</span>
-                    <span>тел. {$store.phone}</span>
+                    {if $store.add_address1 != ''}<span>({$store.add_address1})</span>{/if}
+                    {if $store.add_address2 != ''}<span>({$store.add_address2})</span>{/if}
+                    {if $store.add_address3 != ''}<span>({$store.add_address3})</span>{/if}
+                    {if $store.phone1 != ''}<span>тел. {$store.phone1}</span>{/if}
+                    {if $store.phone2 != ''}<span>тел. {$store.phone2}</span>{/if}
+                    {if $store.phone3 != ''}<span>тел. {$store.phone3}</span>{/if}
                 </div>
                 {/foreach}
             </div>
