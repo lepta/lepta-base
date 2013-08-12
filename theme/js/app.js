@@ -1,3 +1,21 @@
+//"use strict";
+//
+//require.config({
+//    /*
+//     * Let's define short alias for commonly used AMD libraries and name-spaces. Using
+//     * these alias, we do not need to specify lengthy paths, when referring a child
+//     * files. We will 'import' these scripts, using the alias, later in our application.
+//     */
+//    paths : {
+//        // requirejs plugins in use
+//        text : './libs/require/text',
+//        i18n : './libs/require/i18n',
+//        path : './libs/require/path',
+//        // namespace that aggregate core classes that are in frequent use
+//        Boiler : './app/core/_boiler_'
+//    }
+//});
+
 $(function(){
     //init
     var hash = window.location.hash,
