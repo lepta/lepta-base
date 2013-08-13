@@ -7,6 +7,9 @@ use application\models\Leptaden;
 use application\models\ReviewManager;
 use application\models\seo\SeoFactory;
 use system\basic\BaseController;
+use system\basic\Config;
+use system\basic\Redirector;
+use system\basic\Session;
 
 class IndexController extends BaseController {
 
@@ -17,7 +20,8 @@ class IndexController extends BaseController {
         $reviewsManager = new ReviewManager();
         $faq = new Faq();
 
-		$seo = SeoFactory::factory($model);		
+		$seo = SeoFactory::factory($model);
+
 		$this->view->assignValue('meta', $seo->getMetaData() );
 		$this->view->assignValue('content', $content);
 		$this->view->assignValue('reviews', $reviewsManager->getList());

@@ -14,7 +14,7 @@ class ReviewManager extends ActiveRecord {
      */
     public function getList()
     {
-        $qb = $this->db->getQueryBuilder()->from('reviews');
+        $qb = $this->db->getQueryBuilder()->from('reviews')->where(array('is_active' => 1));
         $reviews = $this->db->fetchAll($qb);
         if ($reviews) {
             foreach($reviews as &$review) {

@@ -70,12 +70,14 @@ class Index extends CI_Controller {
 
         $crud->set_table('reviews');
         $crud->set_subject('отзыв');
-        $crud->field_type('text', 'text');
-        $crud->unset_edit_fields('author_name');
-        $crud->unset_columns('author_name');
         $crud->set_field_upload('img', '../userfiles/reviews/');
-        $crud->display_as('text', 'Текст отзыва');
+        $crud->unset_edit_fields('timestamp');
+        $crud->display_as('problem_description', 'Описание проблемы');
+        $crud->display_as('author_name', 'Имя');
+        $crud->display_as('author_age', 'Возраст');
+        $crud->display_as('problem_solution', 'Как помог препарат');
         $crud->display_as('img', 'Изображение');
+        $crud->display_as('would_recommend', 'Порекомендовали бы?');
 
         $output = $crud->render();
 

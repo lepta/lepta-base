@@ -7,18 +7,18 @@
             <img src="/theme/images/moda-alarsin.png" alt=""/>
         </div>
         <div class="form-right">
-            <form name="reviewForm" action="" method="post">
+            <form name="reviewForm" action="/review/add/" method="post" enctype="multipart/form-data">
                 <fieldset>
                     <div class="control-group">
                         <label class="control-label" for="name">Ваше имя<span class="text--pink">*</span>:</label>
                         <div class="controls">
-                            <input type="text" id="name" name="customer_name" required>
+                            <input type="text" id="name" name="author_name" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="age">Возраст<span class="text--pink">*</span>:</label>
                         <div class="controls">
-                            <input type="text" id="age" name="customer_age" class="input--small" required>
+                            <input type="text" id="age" name="author_age" class="input--small" required>
                         </div>
                     </div>
                     <div class="control-group">
@@ -30,20 +30,21 @@
                     <div class="control-group">
                         <label class="control-label for-textarea" for="help">Как помог Лептаден<span class="text--pink">*</span>:</label>
                         <div class="controls">
-                            <textarea id="help" name="help" required></textarea>
+                            <textarea id="help" name="solution" required></textarea>
                         </div>
                     </div>
                     <div class="control-group inline">
                         <label class="control-label for-select" for="recommendation">Порекомендовала бы подруге<span class="text--pink">*</span>:</label>
                         <div class="controls">
-                            <select id="recommendation" name="recommendation" class="small" required>
-                                <option value="yes" selected>Да</option>
-                                <option value="no">Нет</option>
+                            <select id="recommendation" name="would_recommend" class="small" required>
+                                <option value="Y" selected>Да</option>
+                                <option value="N">Нет</option>
                             </select>
                         </div>
                     </div>
                     <div class="control-group inline">
-                        <label class="control-label for-select" for="recommendation">Проверочный код<span class="text--pink">*</span>:</label>
+                        <label class="control-label for-select" for="captcha">Проверочный код<span class="text--pink">*</span>:</label>
+                        <img src='/review/captcha/' />
                         <div class="controls">
                             <input type="text" id="captcha" name="captcha" class="input--small" required>
                         </div>
@@ -51,7 +52,7 @@
                     <div class="control-group inline">
                         <span class="upload-picture-button fileinput-button">
                             <h5>сменить аватар</h5>
-                            <input id="fileupload" type="file" name="files[]" multiple="">
+                            <input id="fileupload" type="file" name="files[]">
                         </span>
                         <div class="controls">
                             <div id="files" class="files"></div>

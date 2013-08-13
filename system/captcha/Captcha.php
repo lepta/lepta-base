@@ -84,7 +84,7 @@ class Captcha {
         // Determine text position
         $box_width = abs($text_box_size[6] - $text_box_size[2]);
         $box_height = abs($text_box_size[5] - $text_box_size[1]);
-        $text_pos_x_min = 0;
+        $text_pos_x_min = 10;
         $text_pos_x_max = ($bg_width) - ($box_width);
         $text_pos_x = rand($text_pos_x_min, $text_pos_x_max);
         $text_pos_y_min = $box_height;
