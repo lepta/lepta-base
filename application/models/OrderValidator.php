@@ -45,7 +45,7 @@ class OrderValidator extends Validator
 
         'shipment_method' => array(
             'value' => array(
-                'range' => array('Курьер', 'Почта')
+                'range' => array('Курьер', 'Новая почта', 'Укрпочта')
             )
         ),
 
@@ -67,7 +67,7 @@ class OrderValidator extends Validator
 
         'payment_method' => array(
             'value' => array(
-                'range' => array('Наличные', 'Карта'),
+                'range' => array('Наличными', 'Безналичный расчет'),
                 '_message' => 'Неверно указан способ оплаты'
             )
         )
