@@ -983,7 +983,7 @@ input[type="text"].medium{
 .answer-text{
     display: inline-block;
     position: relative;
-    vertical-align: middle;
+    vertical-align: top;
 }
 .answer-text{
     width: 93%;
