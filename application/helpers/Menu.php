@@ -47,6 +47,7 @@ class Menu
             'drugstores' => array(
                 'text' => 'Аптеки',
                 'link' => 'drugstores/',
+                'class' => 'no-navigate',
                 'active' => false
             ),
         );

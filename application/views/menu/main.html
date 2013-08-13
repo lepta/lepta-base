@@ -7,9 +7,9 @@
     <ul>
         {foreach $mainmenu as $menuitem}
             {if $menuitem.active}
-                <li><a href="{$mainurl}{$menuitem.link}" class="active">{$menuitem.text}</a></li>
+                <li><a href="{$mainurl}{$menuitem.link}" class="active {if $menuitem.class}no-navigate{/if}">{$menuitem.text}</a></li>
             {else}
-                <li><a href="{$mainurl}{$menuitem.link}">{$menuitem.text}</a></li>
+                <li><a href="{$mainurl}{$menuitem.link}" {if $menuitem.class}class="no-navigate"{/if}>{$menuitem.text}</a></li>
             {/if}
         {/foreach}
     </ul>
