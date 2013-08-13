@@ -1,8 +1,7 @@
 define(function(require) {
     'use strict';
     // Change this to the location of your server-side upload handler:
-    var url = window.location.hostname === 'blueimp.github.io' ?
-            '//jquery-file-upload.appspot.com/' : 'server/php/',
+    var url = '/review/uploadavatar/',
         uploadButton = $('<button/>')
             .addClass('btn')
             .prop('disabled', true)

@@ -66,7 +66,9 @@ define(function(require) {
             if (hash == '#success') {
                 // show modal popup for successful order
                 $('#successModal').modal("show");
-		    } else {
+		    } else if (hash == '#reviewSuccess') {
+                $('#successReviewModal').modal("show");
+            } else {
                 setActiveMenu($("[href='" + hash + "']"));
                 $( "#accordion" ).accordion( "option", "active", $('.section-header').index($(".section-header[data-hash='" + hash.slice(1) + "']")));
             }

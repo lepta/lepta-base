@@ -101,10 +101,10 @@
             <div class="review-section">
                 {foreach $reviews as $review}
                 <div class="review" itemscope itemtype="http://schema.org/Review">
-                    <img src="{$review.image}" alt="Отзыв"/>
+                    <img src="{if $review.img == ''}/userfiles/reviews/default.png{else}/userfiles/reviews/{$review.img}{/if}" alt="Отзыв"/>
                     <div  class="review-text" itemprop="description">
-                        <div class="review-date">Мария (22.10.2013)</div>
-                        {$review.text}
+                        <div class="review-date">{$review.author_name} ({$review.timestamp|date_format:"%d.%m.%Y"})</div>
+                        {$review.problem_solution}
                     </div>
                 </div>
                 {/foreach}

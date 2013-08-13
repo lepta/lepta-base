@@ -16,8 +16,8 @@ define(function(require) {
         modal = require('modal'),
         drugstores = require('drugstores'),
         review = require('review'),
-        faq = require('faq'),
-        fileUpload = require('fileUpload');
+        faq = require('faq');
+        //fileUpload = require('fileUpload');
 
     function init(){
         $("select").customSelect && $("select").customSelect();

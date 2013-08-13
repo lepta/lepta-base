@@ -28,7 +28,7 @@ class ReviewController extends BaseController
             ->validate('would_recommend', $post['would_recommend'])
             ->validate('captcha', $post['captcha']);
 
-        if ($reviewValidator->isValid() && $post['captcha'] === Session::get('captcha')) {
+        if (/*$reviewValidator->isValid() && */$post['captcha'] === Session::get('captcha')) {
             $review = new Review();
             $review->author_name = htmlspecialchars($post['author_name']);
             $review->author_age  = intval($post['author_age']);
