@@ -362,6 +362,13 @@ section.first img{
     line-height: 1;
     padding: 0;
     margin: -10px 0 0 0;
+    color: #fff;
+}
+.leptaden .delivery-button{
+    padding-left: 30px;
+}
+.leptaden .delivery-button h3{
+    font-size: 10px;
 }
 .delivery-button{
     cursor: pointer;
@@ -419,7 +426,7 @@ section.first img{
     margin: 0;
 }
 .review{
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .review-more{
     width: 110px;
@@ -488,6 +495,15 @@ section.first img{
 #reviewModal .form-right form .control-label.for-select{
     padding-top: 0px;
     margin-top: -5px;
+}
+#successReviewModal .form-right{
+    margin-top: 25px;
+}
+#successReviewModal .form-right h3{
+    font-size: 23px;
+}
+#successReviewModal .form-right .flag__image{
+    padding: 0;
 }
 #files{
     background: url("../images/avatar.png") no-repeat;
@@ -936,6 +952,7 @@ input[type="text"].medium{
 
 }
 .pharmacy_content_region_list_item span{
+    display: block;
     font-size: 13px;
     margin-left: 35px;
     line-height: 1;
@@ -986,4 +1003,35 @@ input[type="text"].medium{
 }
 .question h3:hover{
     color: #6cd48e;
+}
+.flag {
+    display: table;
+    width: 100%;
+}
+.flag__image,
+.flag__body {
+    display: table-cell;
+    vertical-align: middle;
+}
+.flag--top{
+    vertical-align: top;
+}
+.flag--bottom{
+    vertical-align: bottom;
+}
+
+.flag__image {
+    padding-right: 10px;
+}
+.flag__image img {
+    display: block;
+    max-width: none;
+}
+
+.flag--rev{
+    padding-right: 0;
+    padding-left: 10px;
+}
+.flag__body {
+    width: 100%;
 }
