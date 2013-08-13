@@ -1,4 +1,4 @@
 <?php
 $applicationCfg = array(
-    'mode' => 'dev'
+    'mode' => 'dev2'
 );
