@@ -6,7 +6,13 @@ footer,header,hgroup,menu,nav,section {
 .text--white{
     color:#fff;
 }
-
+.text--pink{
+    color: #f3438b;
+}
+.inline{
+    display: inline-block;
+    vertical-align: top;
+}
 body{
     font-family: Calibri;
     margin: 0;
@@ -424,6 +430,120 @@ section.first img{
 .review-more img{
     position: relative;
 }
+.review-button {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 25px;
+    right: 40px;
+    text-align: center;
+    display: block;
+    width: 190px;
+    height: 60px;
+    background: url("../images/review_button.png") no-repeat;
+}
+.modal .form-left.pink {
+    background: #e43f82;
+}
+#reviewModal .form-right form {
+    margin: 30px 0 10px 0;
+}
+#reviewModal .form-right form .control-label {
+    width: 130px;
+}
+#reviewModal .form-right form .controls {
+    margin-left: 150px;
+}
+#reviewModal form input[type='text']{
+    width: 315px;
+}
+#reviewModal form textarea{
+    height: 60px;
+    width: 315px;
+}
+#reviewModal form textarea#help{
+    height: 100px;
+}
+#reviewModal .input--small[type="text"]{
+    width: 40px;
+}
+#reviewModal .control-group {
+    margin-bottom: 10px;
+}
+#reviewModal span.customSelect.small{
+    width: 60px;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 15px;
+}
+#reviewModal .form-right form .control-label{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 7px;
+}
+#reviewModal .form-right form .control-label.for-textarea{
+    padding-top: 0px;
+}
+#reviewModal .form-right form .control-label.for-select{
+    padding-top: 0px;
+    margin-top: -5px;
+}
+#files{
+    background: url("../images/avatar.png") no-repeat;
+    width: 62px;
+    height: 62px;
+}
+.review-button h3{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 40px;
+    color: #038bcc;
+}
+.upload-picture-button {
+    cursor: pointer;
+    float: left;
+    border: 0;
+    padding: 0;
+    margin-left: 30px;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+    width: 105px;
+    height: 35px;
+    background: url("../images/gray_button.png") no-repeat;
+}
+.upload-picture-button h5{
+    height: 18px;
+    color: #fff;
+    margin: 0;
+    font-size: 11px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.send-review-button{
+    margin-left: 42px;
+    cursor: pointer;
+    float: left;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    display: block;
+    width: 224px;
+    height: 72px;
+    background: url("../images/white_button.png") no-repeat;
+}
+.send-review-button h3{
+    height: 35px;
+    color: #f3438b;
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 #all{
     padding-bottom: 10px;
     margin-top: 3px;
@@ -644,6 +764,24 @@ form input[type='text']{
     padding: 4px 6px;
     font-size: 14px;
     line-height: 20px;
+}
+form textarea{
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    -webkit-transition: border linear 0.2s,box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s,box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s,box-shadow linear 0.2s;
+    transition: border linear 0.2s,box-shadow linear 0.2s;
+    padding: 4px 6px;
+    font-size: 14px;
+    line-height: 20px;
+    resize: none;
 }
 form input[type='checkbox']{
     opacity: 0.6;
