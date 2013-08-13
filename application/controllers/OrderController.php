@@ -2,6 +2,7 @@
 namespace application\controllers;
 
 use application\helpers\MailingHelper;
+use application\helpers\Url;
 use application\models\Order;
 use application\models\OrderValidator;
 use system\basic\BaseController;
@@ -36,7 +37,7 @@ class OrderController extends BaseController
                 $order = new Order();
                 if (/*$order->checkReferrer($_SERVER['HTTP_REFERER']) && */$order->store($post)) {
                     MailingHelper::sendOrderMail($order, $this->view);
-                    $this->view->assignValue('base_domain', Config::getSectionParam('general', 'base_domain'));
+                    $this->view->assignValue('base_domain', Url::getMainUrl());
                     $this->view->render('layouts/order.html');
                 } else {
                     throw new BaseException('Error occured while storing the order', 503);

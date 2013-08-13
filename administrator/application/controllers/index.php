@@ -78,6 +78,8 @@ class Index extends CI_Controller {
         $crud->display_as('problem_solution', 'Как помог препарат');
         $crud->display_as('img', 'Изображение');
         $crud->display_as('would_recommend', 'Порекомендовали бы?');
+        $crud->display_as('timestamp', 'Время');
+        $crud->display_as('is_active', 'Активность');
 
         $output = $crud->render();
 
