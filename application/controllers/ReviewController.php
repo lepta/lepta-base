@@ -1,6 +1,7 @@
 <?php
 namespace application\controllers;
 
+use application\helpers\MailingHelper;
 use application\helpers\Url;
 use application\models\Review;
 use application\models\ReviewValidator;
@@ -9,6 +10,7 @@ use system\basic\Config;
 use system\basic\Redirector;
 use system\basic\Session;
 use system\captcha\Captcha;
+use system\mailer\Mailer;
 
 class ReviewController extends BaseController
 {
@@ -39,6 +41,7 @@ class ReviewController extends BaseController
             // the decision was taken to abort this functionality
             //$review->setAvatar();
             $review->insert();
+            MailingHelper::setReviewEmail(Config::getSectionParam('general', 'base_domain'));
             Redirector::redirect(Url::getMainUrl('reviewSuccess'));
         } else {
             Redirector::redirect(Url::getMainUrl('reviewError'));
