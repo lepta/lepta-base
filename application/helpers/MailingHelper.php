@@ -46,8 +46,7 @@ class MailingHelper {
         $mailer->Subject = 'Новый отзыв с сайта ' . $site;
         $mailer->SetFrom($mailFrom, 'REVIEW LEPTADEN');
         $mailer->AddReplyTo($mailFrom);
-        //$mailer->AddAddress('kuzmenko.m@smartclick.com.ua');
-        $mailer->AddAddress('cherevko.mail@gmail.com');
+        $mailer->AddAddress('kuzmenko.m@smartclick.com.ua');
         $mailer->MsgHTML('<p>На сайте ' . $site . ' опублкован новый отзыв. <a href="http://' . $site . '/administrator/index/reviews">Перейти в административную панель</a></p>');
         $mailer->Send();
         return;
