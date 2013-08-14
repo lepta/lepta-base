@@ -25,4 +25,5 @@ define(function(require) {
         $('html').css('overflow', 'auto');
         $('.page-container').removeClass('scroll');
     });
+        $("select").customSelect && $("select").customSelect();
 });

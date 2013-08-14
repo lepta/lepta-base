@@ -2,7 +2,6 @@
 
 require.config({
     paths : {
-        //fileUpload : './fileUpload',
         navigation: './navigation',
         modal: './modal',
         drugstores: './drugstores',
@@ -17,11 +16,4 @@ define(function(require) {
         drugstores = require('drugstores'),
         review = require('review'),
         faq = require('faq');
-        //fileUpload = require('fileUpload');
-
-    function init(){
-        $("select").customSelect && $("select").customSelect();
-    }
-
-    init();
 });

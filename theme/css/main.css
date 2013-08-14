@@ -480,6 +480,7 @@ section.first img{
 }
 #reviewModal .control-group {
     margin-bottom: 10px;
+    position: relative;
 }
 #reviewModal span.customSelect.small{
     width: 60px;
@@ -499,6 +500,10 @@ section.first img{
     padding-top: 0px;
     margin-top: -5px;
 }
+select{
+    top: 0 !important;
+}
+
 #successReviewModal .form-right{
     margin-top: 25px;
 }

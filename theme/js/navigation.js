@@ -26,6 +26,7 @@ define(function(require) {
 
     function animateIcons(ui){
         if (!document.all && document.addEventListener) {
+            console.log($(ui.newHeader).find(".collapse-icon").animate)
             $(ui.oldHeader).find(".collapse-icon").animate({
                 transform: 'rotate(0deg)'
             })
