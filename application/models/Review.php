@@ -35,6 +35,8 @@ class Review extends ActiveRecord {
         $config['max_size']	= '1000';
         $config['max_width']  = '2024';
         $config['max_height']  = '1768';
+        $config['image_width'] = '100';
+        $config['image_height'] = '100';
 
         $upload = new Upload($config);
 

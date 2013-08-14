@@ -30,7 +30,7 @@ class Menu
                 'active' => false
             ),
             'improve_lactation' => array(
-                'text' => 'Как улучшить лактацию?',
+                'text' => 'Как улучшить лактацию',
                 'link' => '#improve_lactation',
                 'active' => false
             ),

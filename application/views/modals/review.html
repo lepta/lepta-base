@@ -18,7 +18,7 @@
                     <div class="control-group">
                         <label class="control-label" for="age">Возраст:</label>
                         <div class="controls">
-                            <input type="text" id="age" name="author_age" class="input--small" required>
+                            <input type="text" id="age" name="author_age" class="input--small">
                         </div>
                     </div>
                     <div class="control-group">
@@ -42,23 +42,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="control-group inline">
-                        <label class="control-label for-select" for="captcha">Проверочный код<span class="text--pink">*</span>:</label>
-                        <img src='/review/captcha/' />
+                    <div class="control-group inline captcha">
+                        <label style="margin: 0; padding-left: 0" class="control-label for-select" for="captcha">Проверочный код<span class="text--pink">*</span>:</label>
                         <div class="controls">
-                            <input type="text" id="captcha" name="captcha" class="input--small" required>
+                            <img src='/review/captcha/' />
+                            <input type="text" id="captcha" name="captcha" class="input--small" required style="margin-top: -28px">
                         </div>
                     </div>
-                    <!--
-                    <div class="control-group inline">
-                        <span class="upload-picture-button fileinput-button">
-                            <h5>сменить аватар</h5>
-                            <input id="fileupload" type="file" name="files[]">
-                        </span>
-                        <div class="controls">
-                            <div id="files" class="files"></div>
-                        </div>
-                    </div>-->
                     <div class="control-group inline">
                         <button type="submit" class="send-review-button"><h3>ОТПРАВИТЬ ОТЗЫВ</h3></button>
                     </div>

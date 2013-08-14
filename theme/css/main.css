@@ -268,7 +268,7 @@ header .section-header-background{
 }
 .section-body img{
     position: absolute;
-    bottom: 0;
+    /*bottom: 0;*/
 }
 img.right{
     right: 0;
@@ -453,6 +453,8 @@ section.first img{
 .modal .form-left.pink {
     background: #e43f82;
 }
+#reviewModal .modal-inner {overflow-y: hidden}
+
 #reviewModal .form-right form {
     margin: 30px 0 10px 0;
 }
@@ -540,7 +542,7 @@ section.first img{
     font-weight: bold;
 }
 .send-review-button{
-    margin-left: 42px;
+    margin-left: 150px;
     cursor: pointer;
     float: left;
     border: 0;
@@ -1034,4 +1036,11 @@ input[type="text"].medium{
 }
 .flag__body {
     width: 100%;
+}
+
+.captcha .control-label{
+    width: 105px!important;
+}
+.captcha .controls{
+    margin-left: 110px!important;
 }

@@ -2,7 +2,7 @@
 
 require.config({
     paths : {
-        fileUpload : './fileUpload',
+        //fileUpload : './fileUpload',
         navigation: './navigation',
         modal: './modal',
         drugstores: './drugstores',

@@ -28,6 +28,7 @@ class ReviewController extends BaseController
             ->validate('would_recommend', $post['would_recommend'])
             ->validate('captcha', $post['captcha']);
 
+        // to silently forward person to the same page is not a deal, but nothing better was proposed
         if (/*$reviewValidator->isValid() && */$post['captcha'] === Session::get('captcha')) {
             $review = new Review();
             $review->author_name = htmlspecialchars($post['author_name']);
@@ -35,7 +36,8 @@ class ReviewController extends BaseController
             $review->problem_description = htmlspecialchars($post['description']);
             $review->problem_solution = htmlspecialchars($post['solution']);
             $review->would_recommend = $post['would_recommend'];
-            $review->setAvatar();
+            // the decision was taken to abort this functionality
+            //$review->setAvatar();
             $review->insert();
             Redirector::redirect(Url::getMainUrl('reviewSuccess'));
         } else {
