@@ -65,7 +65,7 @@ strong{
 /* header*/
 header{
     z-index: 1;
-    padding: 5px 5px 0 40px;
+    padding: 5px 0 0 40px;
     top: 0;
     position: fixed;
     background: #fff;
@@ -268,7 +268,7 @@ header .section-header-background{
 }
 .section-body img{
     position: absolute;
-    /*bottom: 0;*/
+    bottom: 0;
 }
 img.right{
     right: 0;
@@ -341,6 +341,9 @@ section.first img{
     margin-right: 10px;
     color: #08498f;
     text-transform: uppercase;
+}
+.leptaden img{
+    bottom: inherit;
 }
 .leptaden .order-button {
     border: 0;
@@ -453,10 +456,8 @@ section.first img{
 .modal .form-left.pink {
     background: #e43f82;
 }
-#reviewModal .modal-inner {overflow-y: hidden}
-
 #reviewModal .form-right form {
-    margin: 30px 0 10px 0;
+    margin: 30px 0 5px 0;
 }
 #reviewModal .form-right form .control-label {
     width: 130px;
