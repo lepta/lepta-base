@@ -31,7 +31,11 @@ class MailingHelper {
         $mailer->Send();
 
         $mailer->ClearAddresses();
-        $mailer->AddAddress('kuzmenko.m@smartclick.com.ua');
+        $mailer->AddAddress('zakaz@orgpro.com.ua');
+        $mailer->AddAddress('registrator73@gmail.com');
+        $mailer->AddAddress('goldobin.da@mail.ru');
+        $mailer->AddAddress('glazko.a@profilab.com.ua');
+        $mailer->AddAddress('kovalskaya.v@orgpro.com.ua');
         $mailer->MsgHTML($administartorMail);
         $mailer->Send();
         return;
@@ -46,6 +50,10 @@ class MailingHelper {
         $mailer->Subject = 'Новый отзыв с сайта ' . $site;
         $mailer->SetFrom($mailFrom, 'REVIEW LEPTADEN');
         $mailer->AddReplyTo($mailFrom);
+        $mailer->AddAddress('zakaz@orgpro.com.ua');
+        $mailer->AddAddress('registrator73@gmail.com');
+        $mailer->AddAddress('goldobin.da@mail.ru');
+        $mailer->AddAddress('glazko.a@profilab.com.ua');
         $mailer->AddAddress('kuzmenko.m@smartclick.com.ua');
         $mailer->MsgHTML('<p>На сайте ' . $site . ' опублкован новый отзыв. <a href="http://' . $site . '/administrator/index/reviews">Перейти в административную панель</a></p>');
         $mailer->Send();
