@@ -1,6 +1,7 @@
 <?php
 namespace application\models\seo;
 
+use application\models\Drugstores;
 use application\models\Leptaden;
 use system\basic\BaseModel;
 
@@ -15,6 +16,8 @@ class SeoFactory extends BaseModel
         $seo = null;
         if ($module instanceof Leptaden) {
             $seo = new SeoLeptaden();
+        } else if ($module instanceof Drugstores) {
+            $seo = new SeoDrugstores();
         }
         if (!is_null($seo)) {
             $seo->init($module);

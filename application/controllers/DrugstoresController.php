@@ -6,6 +6,7 @@ use application\helpers\Url;
 use application\models\DrugstoreCity;
 use application\models\DrugstoreRegion;
 use application\models\Drugstores;
+use application\models\seo\SeoFactory;
 use system\basic\BaseController;
 use system\basic\exceptions\WrongInputParamsException;
 
@@ -30,6 +31,10 @@ class DrugstoresController extends BaseController
         }
         $drugstores = new Drugstores();
 
+        $seo = SeoFactory::factory($drugstores);
+        $meta = $seo ? $seo->getMetaData() : array();
+
+        $this->view->assignValue('meta', $meta);
         $this->view->assignValue('drugstores', $drugstores->getList($city->id) );
         $this->view->assignValue('regions', $drugstores->getRegions() );
         $this->view->assignValue('cities', $drugstores->getCities($city->region_id) );
