@@ -343,7 +343,12 @@ section.first img{
     text-transform: uppercase;
 }
 .leptaden img{
+    left: 0;
     bottom: inherit;
+}
+
+.leptaden img.bottom {
+    bottom: 0;
 }
 .leptaden .order-button {
     border: 0;
@@ -376,7 +381,7 @@ section.first img{
 .delivery-button{
     cursor: pointer;
     width: 155px;
-    margin: 0 auto;
+    margin: 0 0 0 73px;
     padding-left: 25px;
     height: 58px;
     border: 0;
@@ -393,8 +398,8 @@ section.first img{
     line-height: 11px;
 }
 .leptaden .text-section{
-    width: 33%;
-    margin-left: 38%;
+    width: 63%;
+    margin-left: 35%;
     display: inline-block;
 }
 .leptaden .text-section p{
