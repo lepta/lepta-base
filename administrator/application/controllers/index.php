@@ -71,7 +71,6 @@ class Index extends CI_Controller {
         $crud->set_table('reviews');
         $crud->set_subject('отзыв');
         $crud->set_field_upload('img', '../userfiles/reviews/');
-        $crud->unset_edit_fields('timestamp');
         $crud->display_as('problem_description', 'Описание проблемы');
         $crud->display_as('author_name', 'Имя');
         $crud->display_as('author_age', 'Возраст');
