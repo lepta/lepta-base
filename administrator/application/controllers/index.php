@@ -79,6 +79,7 @@ class Index extends CI_Controller {
         $crud->display_as('would_recommend', 'Порекомендовали бы?');
         $crud->display_as('timestamp', 'Время');
         $crud->display_as('is_active', 'Активность');
+        $crud->order_by('timestamp', 'desc');
 
         $output = $crud->render();
 
