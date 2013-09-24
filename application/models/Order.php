@@ -16,6 +16,12 @@ class Order extends ActiveRecord
 
     protected $_products = array('leptaden.com.ua' => 'Лептаден');
 
+    protected $_shipmentMethods = array(
+                                    'courier' => 'Курьером по Киеву',
+                                    'ukrpost' => 'Укрпочта',
+                                    'newpost' => 'Новая почта'
+                                 );
+
     /**
      * @var string
      */
@@ -37,12 +43,17 @@ class Order extends ActiveRecord
         $this->customer_name = htmlspecialchars($orderData['customer_name']);
         $this->customer_phone = htmlspecialchars($orderData['customer_phone']);
         $this->customer_email = htmlspecialchars($orderData['customer_email']);
-        $this->shipment_method = htmlspecialchars($orderData['shipment_method']);
         $this->shipment_city = htmlspecialchars($orderData['shipment_city']);
         $this->shipment_street = htmlspecialchars($orderData['shipment_street']);
         $this->shipment_building = htmlspecialchars($orderData['shipment_building']);
         $this->shipment_apartment = htmlspecialchars($orderData['shipment_apartment']);
         $this->payment_method = htmlspecialchars($orderData['payment_method']);
+
+        if (array_key_exists($orderData['shipment_method'], $this->_shipmentMethods)) {
+            $this->shipment_method = $this->_shipmentMethods[$orderData['shipment_method']];
+        } else {
+            $this->_shipmentMethods = NULL;
+        }
 
         $result = $this->insert(true);
         if ($result) {

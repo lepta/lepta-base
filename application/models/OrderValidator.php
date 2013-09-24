@@ -43,12 +43,6 @@ class OrderValidator extends Validator
             'email'
         ),
 
-        'shipment_method' => array(
-            'value' => array(
-                'range' => array('Курьер', 'Новая почта', 'Укрпочта')
-            )
-        ),
-
         'shipment_city' => array(
             'not_empty'
         ),
